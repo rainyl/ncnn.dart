@@ -1,0 +1,63 @@
+# Run with `dart run ffigen --config ffigen.yaml`.
+name: NcnnNative
+description: |
+  Bindings for `src/ncnn/c_api.h`.
+
+  Regenerate bindings with `dart run ffigen --config ffigen.yaml`.
+output:
+  bindings: 'lib/src/g/ncnn.g.dart'
+  symbol-file:
+    output: 'package:ncnn/src/g/ncnn.yaml'
+    import-path: 'package:ncnn/src/g/ncnn.g.dart'
+# ffi-native:
+#   assetId: 'package:ncnn/ncnn.dart' # Optional.
+sort: true
+compiler-opts: "-Isrc -Isrc/ncnn -D NCNN_STATIC_DEFINE=1"
+include-unused-typedefs: true
+headers:
+  entry-points:
+    - 'src/ncnn/c_api.h'
+  include-directives:
+    - 'src/ncnn/c_api.h'
+# structs:
+#   exclude:
+#     - "_.*"
+functions:
+  include:
+    - "ncnn_.*"
+#   leaf:
+#     include:
+#       - ".*_Mat_flags"
+#       - ".*_Mat_type"
+#       - ".*_Mat_countNonZero"
+#       - ".*_Mat_isContinuous"
+#       - ".*_Mat_isSubmatrix"
+#       - ".*_Mat_rows"
+#       - ".*_Mat_cols"
+#       - ".*_Mat_channels"
+#       - ".*_Mat_step"
+#       - ".*_Mat_total"
+#       - ".*_Mat_size"
+#       - ".*_Mat_elemSize.*"
+#       - ".*_Mat_dims"
+#       - ".*_Mat_data"
+#       - ".*_Mat_get.*"
+#       - ".*_Mat_set.*"
+
+  symbol-address:
+    include:
+      - ".*_destroy.*"
+#     exclude: # If you only use exclude, then everything not excluded is generated.
+#       - "dispose"
+preamble: |
+  // coverage:ignore-file
+  // ignore_for_file: always_specify_types
+  // ignore_for_file: camel_case_types
+  // ignore_for_file: non_constant_identifier_names
+  // ncnn - NCNN bindings for Dart language
+  // Author: Rainyl
+  // License: Apache-2.0
+  // Date: 2024/10/30
+comments:
+  style: any
+  length: full

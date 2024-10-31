@@ -1,0 +1,372 @@
+format_version: 1.0.0
+files:
+  package:ncnn/src/g/ncnn.g.dart:
+    used-config:
+      ffi-native: false
+    symbols:
+      c:@F@ncnn_allocator_create_pool_allocator:
+        name: ncnn_allocator_create_pool_allocator
+      c:@F@ncnn_allocator_create_unlocked_pool_allocator:
+        name: ncnn_allocator_create_unlocked_pool_allocator
+      c:@F@ncnn_allocator_destroy:
+        name: ncnn_allocator_destroy
+      c:@F@ncnn_blob_get_bottom_shape:
+        name: ncnn_blob_get_bottom_shape
+      c:@F@ncnn_blob_get_consumer:
+        name: ncnn_blob_get_consumer
+      c:@F@ncnn_blob_get_name:
+        name: ncnn_blob_get_name
+      c:@F@ncnn_blob_get_producer:
+        name: ncnn_blob_get_producer
+      c:@F@ncnn_blob_get_shape:
+        name: ncnn_blob_get_shape
+      c:@F@ncnn_blob_get_top_shape:
+        name: ncnn_blob_get_top_shape
+      c:@F@ncnn_convert_packing:
+        name: ncnn_convert_packing
+      c:@F@ncnn_copy_cut_border:
+        name: ncnn_copy_cut_border
+      c:@F@ncnn_copy_cut_border_3d:
+        name: ncnn_copy_cut_border_3d
+      c:@F@ncnn_copy_make_border:
+        name: ncnn_copy_make_border
+      c:@F@ncnn_copy_make_border_3d:
+        name: ncnn_copy_make_border_3d
+      c:@F@ncnn_datareader_create:
+        name: ncnn_datareader_create
+      c:@F@ncnn_datareader_create_from_memory:
+        name: ncnn_datareader_create_from_memory
+      c:@F@ncnn_datareader_create_from_stdio:
+        name: ncnn_datareader_create_from_stdio
+      c:@F@ncnn_datareader_destroy:
+        name: ncnn_datareader_destroy
+      c:@F@ncnn_draw_circle_c1:
+        name: ncnn_draw_circle_c1
+      c:@F@ncnn_draw_circle_c2:
+        name: ncnn_draw_circle_c2
+      c:@F@ncnn_draw_circle_c3:
+        name: ncnn_draw_circle_c3
+      c:@F@ncnn_draw_circle_c4:
+        name: ncnn_draw_circle_c4
+      c:@F@ncnn_draw_line_c1:
+        name: ncnn_draw_line_c1
+      c:@F@ncnn_draw_line_c2:
+        name: ncnn_draw_line_c2
+      c:@F@ncnn_draw_line_c3:
+        name: ncnn_draw_line_c3
+      c:@F@ncnn_draw_line_c4:
+        name: ncnn_draw_line_c4
+      c:@F@ncnn_draw_rectangle_c1:
+        name: ncnn_draw_rectangle_c1
+      c:@F@ncnn_draw_rectangle_c2:
+        name: ncnn_draw_rectangle_c2
+      c:@F@ncnn_draw_rectangle_c3:
+        name: ncnn_draw_rectangle_c3
+      c:@F@ncnn_draw_rectangle_c4:
+        name: ncnn_draw_rectangle_c4
+      c:@F@ncnn_draw_text_c1:
+        name: ncnn_draw_text_c1
+      c:@F@ncnn_draw_text_c2:
+        name: ncnn_draw_text_c2
+      c:@F@ncnn_draw_text_c3:
+        name: ncnn_draw_text_c3
+      c:@F@ncnn_draw_text_c4:
+        name: ncnn_draw_text_c4
+      c:@F@ncnn_extractor_create:
+        name: ncnn_extractor_create
+      c:@F@ncnn_extractor_destroy:
+        name: ncnn_extractor_destroy
+      c:@F@ncnn_extractor_extract:
+        name: ncnn_extractor_extract
+      c:@F@ncnn_extractor_extract_index:
+        name: ncnn_extractor_extract_index
+      c:@F@ncnn_extractor_input:
+        name: ncnn_extractor_input
+      c:@F@ncnn_extractor_input_index:
+        name: ncnn_extractor_input_index
+      c:@F@ncnn_extractor_set_option:
+        name: ncnn_extractor_set_option
+      c:@F@ncnn_flatten:
+        name: ncnn_flatten
+      c:@F@ncnn_layer_create:
+        name: ncnn_layer_create
+      c:@F@ncnn_layer_create_by_type:
+        name: ncnn_layer_create_by_type
+      c:@F@ncnn_layer_create_by_typeindex:
+        name: ncnn_layer_create_by_typeindex
+      c:@F@ncnn_layer_destroy:
+        name: ncnn_layer_destroy
+      c:@F@ncnn_layer_get_bottom:
+        name: ncnn_layer_get_bottom
+      c:@F@ncnn_layer_get_bottom_count:
+        name: ncnn_layer_get_bottom_count
+      c:@F@ncnn_layer_get_name:
+        name: ncnn_layer_get_name
+      c:@F@ncnn_layer_get_one_blob_only:
+        name: ncnn_layer_get_one_blob_only
+      c:@F@ncnn_layer_get_support_bf16_storage:
+        name: ncnn_layer_get_support_bf16_storage
+      c:@F@ncnn_layer_get_support_fp16_storage:
+        name: ncnn_layer_get_support_fp16_storage
+      c:@F@ncnn_layer_get_support_image_storage:
+        name: ncnn_layer_get_support_image_storage
+      c:@F@ncnn_layer_get_support_inplace:
+        name: ncnn_layer_get_support_inplace
+      c:@F@ncnn_layer_get_support_packing:
+        name: ncnn_layer_get_support_packing
+      c:@F@ncnn_layer_get_support_vulkan:
+        name: ncnn_layer_get_support_vulkan
+      c:@F@ncnn_layer_get_top:
+        name: ncnn_layer_get_top
+      c:@F@ncnn_layer_get_top_count:
+        name: ncnn_layer_get_top_count
+      c:@F@ncnn_layer_get_type:
+        name: ncnn_layer_get_type
+      c:@F@ncnn_layer_get_typeindex:
+        name: ncnn_layer_get_typeindex
+      c:@F@ncnn_layer_set_one_blob_only:
+        name: ncnn_layer_set_one_blob_only
+      c:@F@ncnn_layer_set_support_bf16_storage:
+        name: ncnn_layer_set_support_bf16_storage
+      c:@F@ncnn_layer_set_support_fp16_storage:
+        name: ncnn_layer_set_support_fp16_storage
+      c:@F@ncnn_layer_set_support_image_storage:
+        name: ncnn_layer_set_support_image_storage
+      c:@F@ncnn_layer_set_support_inplace:
+        name: ncnn_layer_set_support_inplace
+      c:@F@ncnn_layer_set_support_packing:
+        name: ncnn_layer_set_support_packing
+      c:@F@ncnn_layer_set_support_vulkan:
+        name: ncnn_layer_set_support_vulkan
+      c:@F@ncnn_layer_type_to_index:
+        name: ncnn_layer_type_to_index
+      c:@F@ncnn_mat_clone:
+        name: ncnn_mat_clone
+      c:@F@ncnn_mat_create:
+        name: ncnn_mat_create
+      c:@F@ncnn_mat_create_1d:
+        name: ncnn_mat_create_1d
+      c:@F@ncnn_mat_create_1d_elem:
+        name: ncnn_mat_create_1d_elem
+      c:@F@ncnn_mat_create_2d:
+        name: ncnn_mat_create_2d
+      c:@F@ncnn_mat_create_2d_elem:
+        name: ncnn_mat_create_2d_elem
+      c:@F@ncnn_mat_create_3d:
+        name: ncnn_mat_create_3d
+      c:@F@ncnn_mat_create_3d_elem:
+        name: ncnn_mat_create_3d_elem
+      c:@F@ncnn_mat_create_4d:
+        name: ncnn_mat_create_4d
+      c:@F@ncnn_mat_create_4d_elem:
+        name: ncnn_mat_create_4d_elem
+      c:@F@ncnn_mat_create_external_1d:
+        name: ncnn_mat_create_external_1d
+      c:@F@ncnn_mat_create_external_1d_elem:
+        name: ncnn_mat_create_external_1d_elem
+      c:@F@ncnn_mat_create_external_2d:
+        name: ncnn_mat_create_external_2d
+      c:@F@ncnn_mat_create_external_2d_elem:
+        name: ncnn_mat_create_external_2d_elem
+      c:@F@ncnn_mat_create_external_3d:
+        name: ncnn_mat_create_external_3d
+      c:@F@ncnn_mat_create_external_3d_elem:
+        name: ncnn_mat_create_external_3d_elem
+      c:@F@ncnn_mat_create_external_4d:
+        name: ncnn_mat_create_external_4d
+      c:@F@ncnn_mat_create_external_4d_elem:
+        name: ncnn_mat_create_external_4d_elem
+      c:@F@ncnn_mat_destroy:
+        name: ncnn_mat_destroy
+      c:@F@ncnn_mat_fill_float:
+        name: ncnn_mat_fill_float
+      c:@F@ncnn_mat_from_pixels:
+        name: ncnn_mat_from_pixels
+      c:@F@ncnn_mat_from_pixels_resize:
+        name: ncnn_mat_from_pixels_resize
+      c:@F@ncnn_mat_from_pixels_roi:
+        name: ncnn_mat_from_pixels_roi
+      c:@F@ncnn_mat_from_pixels_roi_resize:
+        name: ncnn_mat_from_pixels_roi_resize
+      c:@F@ncnn_mat_get_c:
+        name: ncnn_mat_get_c
+      c:@F@ncnn_mat_get_channel_data:
+        name: ncnn_mat_get_channel_data
+      c:@F@ncnn_mat_get_cstep:
+        name: ncnn_mat_get_cstep
+      c:@F@ncnn_mat_get_d:
+        name: ncnn_mat_get_d
+      c:@F@ncnn_mat_get_data:
+        name: ncnn_mat_get_data
+      c:@F@ncnn_mat_get_dims:
+        name: ncnn_mat_get_dims
+      c:@F@ncnn_mat_get_elempack:
+        name: ncnn_mat_get_elempack
+      c:@F@ncnn_mat_get_elemsize:
+        name: ncnn_mat_get_elemsize
+      c:@F@ncnn_mat_get_h:
+        name: ncnn_mat_get_h
+      c:@F@ncnn_mat_get_w:
+        name: ncnn_mat_get_w
+      c:@F@ncnn_mat_reshape_1d:
+        name: ncnn_mat_reshape_1d
+      c:@F@ncnn_mat_reshape_2d:
+        name: ncnn_mat_reshape_2d
+      c:@F@ncnn_mat_reshape_3d:
+        name: ncnn_mat_reshape_3d
+      c:@F@ncnn_mat_reshape_4d:
+        name: ncnn_mat_reshape_4d
+      c:@F@ncnn_mat_substract_mean_normalize:
+        name: ncnn_mat_substract_mean_normalize
+      c:@F@ncnn_mat_to_pixels:
+        name: ncnn_mat_to_pixels
+      c:@F@ncnn_mat_to_pixels_resize:
+        name: ncnn_mat_to_pixels_resize
+      c:@F@ncnn_modelbin_create_from_datareader:
+        name: ncnn_modelbin_create_from_datareader
+      c:@F@ncnn_modelbin_create_from_mat_array:
+        name: ncnn_modelbin_create_from_mat_array
+      c:@F@ncnn_modelbin_destroy:
+        name: ncnn_modelbin_destroy
+      c:@F@ncnn_net_clear:
+        name: ncnn_net_clear
+      c:@F@ncnn_net_create:
+        name: ncnn_net_create
+      c:@F@ncnn_net_destroy:
+        name: ncnn_net_destroy
+      c:@F@ncnn_net_get_input_count:
+        name: ncnn_net_get_input_count
+      c:@F@ncnn_net_get_input_index:
+        name: ncnn_net_get_input_index
+      c:@F@ncnn_net_get_input_name:
+        name: ncnn_net_get_input_name
+      c:@F@ncnn_net_get_option:
+        name: ncnn_net_get_option
+      c:@F@ncnn_net_get_output_count:
+        name: ncnn_net_get_output_count
+      c:@F@ncnn_net_get_output_index:
+        name: ncnn_net_get_output_index
+      c:@F@ncnn_net_get_output_name:
+        name: ncnn_net_get_output_name
+      c:@F@ncnn_net_load_model:
+        name: ncnn_net_load_model
+      c:@F@ncnn_net_load_model_datareader:
+        name: ncnn_net_load_model_datareader
+      c:@F@ncnn_net_load_model_memory:
+        name: ncnn_net_load_model_memory
+      c:@F@ncnn_net_load_param:
+        name: ncnn_net_load_param
+      c:@F@ncnn_net_load_param_bin:
+        name: ncnn_net_load_param_bin
+      c:@F@ncnn_net_load_param_bin_datareader:
+        name: ncnn_net_load_param_bin_datareader
+      c:@F@ncnn_net_load_param_bin_memory:
+        name: ncnn_net_load_param_bin_memory
+      c:@F@ncnn_net_load_param_datareader:
+        name: ncnn_net_load_param_datareader
+      c:@F@ncnn_net_load_param_memory:
+        name: ncnn_net_load_param_memory
+      c:@F@ncnn_net_register_custom_layer_by_type:
+        name: ncnn_net_register_custom_layer_by_type
+      c:@F@ncnn_net_register_custom_layer_by_typeindex:
+        name: ncnn_net_register_custom_layer_by_typeindex
+      c:@F@ncnn_net_set_option:
+        name: ncnn_net_set_option
+      c:@F@ncnn_net_set_vulkan_device:
+        name: ncnn_net_set_vulkan_device
+      c:@F@ncnn_option_create:
+        name: ncnn_option_create
+      c:@F@ncnn_option_destroy:
+        name: ncnn_option_destroy
+      c:@F@ncnn_option_get_num_threads:
+        name: ncnn_option_get_num_threads
+      c:@F@ncnn_option_get_use_local_pool_allocator:
+        name: ncnn_option_get_use_local_pool_allocator
+      c:@F@ncnn_option_get_use_vulkan_compute:
+        name: ncnn_option_get_use_vulkan_compute
+      c:@F@ncnn_option_set_blob_allocator:
+        name: ncnn_option_set_blob_allocator
+      c:@F@ncnn_option_set_num_threads:
+        name: ncnn_option_set_num_threads
+      c:@F@ncnn_option_set_use_local_pool_allocator:
+        name: ncnn_option_set_use_local_pool_allocator
+      c:@F@ncnn_option_set_use_vulkan_compute:
+        name: ncnn_option_set_use_vulkan_compute
+      c:@F@ncnn_option_set_workspace_allocator:
+        name: ncnn_option_set_workspace_allocator
+      c:@F@ncnn_paramdict_create:
+        name: ncnn_paramdict_create
+      c:@F@ncnn_paramdict_destroy:
+        name: ncnn_paramdict_destroy
+      c:@F@ncnn_paramdict_get_array:
+        name: ncnn_paramdict_get_array
+      c:@F@ncnn_paramdict_get_float:
+        name: ncnn_paramdict_get_float
+      c:@F@ncnn_paramdict_get_int:
+        name: ncnn_paramdict_get_int
+      c:@F@ncnn_paramdict_get_type:
+        name: ncnn_paramdict_get_type
+      c:@F@ncnn_paramdict_set_array:
+        name: ncnn_paramdict_set_array
+      c:@F@ncnn_paramdict_set_float:
+        name: ncnn_paramdict_set_float
+      c:@F@ncnn_paramdict_set_int:
+        name: ncnn_paramdict_set_int
+      c:@F@ncnn_version:
+        name: ncnn_version
+      c:@S@__ncnn_allocator_t:
+        name: __ncnn_allocator_t
+      c:@S@__ncnn_blob_t:
+        name: __ncnn_blob_t
+      c:@S@__ncnn_datareader_t:
+        name: __ncnn_datareader_t
+      c:@S@__ncnn_extractor_t:
+        name: __ncnn_extractor_t
+      c:@S@__ncnn_layer_t:
+        name: __ncnn_layer_t
+      c:@S@__ncnn_mat_t:
+        name: __ncnn_mat_t
+      c:@S@__ncnn_modelbin_t:
+        name: __ncnn_modelbin_t
+      c:@S@__ncnn_net_custom_layer_factory_t:
+        name: __ncnn_net_custom_layer_factory_t
+      c:@S@__ncnn_net_t:
+        name: __ncnn_net_t
+      c:@S@__ncnn_option_t:
+        name: __ncnn_option_t
+      c:@S@__ncnn_paramdict_t:
+        name: __ncnn_paramdict_t
+      c:@S@_iobuf:
+        name: _iobuf
+      c:@T@FILE:
+        name: FILE
+      c:c_api.h@T@ncnn_allocator_t:
+        name: ncnn_allocator_t
+      c:c_api.h@T@ncnn_blob_t:
+        name: ncnn_blob_t
+      c:c_api.h@T@ncnn_datareader_t:
+        name: ncnn_datareader_t
+      c:c_api.h@T@ncnn_extractor_t:
+        name: ncnn_extractor_t
+      c:c_api.h@T@ncnn_layer_creator_t:
+        name: ncnn_layer_creator_t
+      c:c_api.h@T@ncnn_layer_destroyer_t:
+        name: ncnn_layer_destroyer_t
+      c:c_api.h@T@ncnn_layer_t:
+        name: ncnn_layer_t
+      c:c_api.h@T@ncnn_mat_t:
+        name: ncnn_mat_t
+      c:c_api.h@T@ncnn_modelbin_t:
+        name: ncnn_modelbin_t
+      c:c_api.h@T@ncnn_net_custom_layer_factory_t:
+        name: ncnn_net_custom_layer_factory_t
+      c:c_api.h@T@ncnn_net_t:
+        name: ncnn_net_t
+      c:c_api.h@T@ncnn_option_t:
+        name: ncnn_option_t
+      c:c_api.h@T@ncnn_paramdict_t:
+        name: ncnn_paramdict_t
+      ncnn_layer_creator_tFunction:
+        name: ncnn_layer_creator_tFunction
+      ncnn_layer_destroyer_tFunction:
+        name: ncnn_layer_destroyer_tFunction

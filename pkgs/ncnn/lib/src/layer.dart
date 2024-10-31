@@ -3,9 +3,13 @@
 import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart';
+import 'package:ncnn/src/paramdict.dart';
 
 import 'base.dart';
 import 'g/ncnn.g.dart' as cg;
+import 'mat.dart';
+import 'modelbin.dart';
+import 'option.dart';
 
 class Layer extends NativeObject<cg.ncnn_layer_t> {
   Layer.fromPointer(super.ptr) {
@@ -19,8 +23,8 @@ class Layer extends NativeObject<cg.ncnn_layer_t> {
     cncnn.ncnn_layer_destroy(ptr);
   }
 
-  List<int> get bottoms => List.generate(bottomCount, (i) => getBottom(i));
-  List<int> get tops => List.generate(topCount, (i) => getTop(i));
+  List<int> get bottoms => List.generate(bottomCount, getBottom);
+  List<int> get tops => List.generate(topCount, getTop);
 
   factory Layer.create() {
     final p = cncnn.ncnn_layer_create();
@@ -72,6 +76,60 @@ class Layer extends NativeObject<cg.ncnn_layer_t> {
   int get bottomCount => cncnn.ncnn_layer_get_bottom_count(ptr);
   int getTop(int i) => cncnn.ncnn_layer_get_top(ptr, i);
   int get topCount => cncnn.ncnn_layer_get_top_count(ptr);
+
+  int loadParam(ParamDict pd) {
+    final f = ptr.ref.load_param.asFunction<cg.Dartncnn_layer_load_paramFunction>();
+    return f(ptr, pd.ptr);
+  }
+
+  int loadModel(ModelBin mb) {
+    final f = ptr.ref.load_model.asFunction<cg.Dartncnn_layer_load_modelFunction>();
+    return f(ptr, mb.ptr);
+  }
+
+  int createPipeline(Option opt) {
+    final f = ptr.ref.create_pipeline.asFunction<cg.Dartncnn_layer_create_pipelineFunction>();
+    return f(ptr, opt.ptr);
+  }
+
+  int destroyPipeline(Option opt) {
+    final f = ptr.ref.destroy_pipeline.asFunction<cg.Dartncnn_layer_destroy_pipelineFunction>();
+    return f(ptr, opt.ptr);
+  }
+
+  (int, Mat topBlob) forward1(Mat bottomBlob, {Option? opt, bool inplace = false}) {
+    opt ??=Option.create();
+    if (inplace) {
+      final f = ptr.ref.forward_inplace_1.asFunction<cg.Dartncnn_layer_forward_inplace_1Function>();
+      return (f(ptr, bottomBlob.ptr, opt.ptr), bottomBlob);
+    }
+    final ptop = calloc<cg.ncnn_mat_t>();
+    final f = ptr.ref.forward_1.asFunction<cg.Dartncnn_layer_forward_1Function>();
+    final rval = f(ptr, bottomBlob.ptr, ptop, opt.ptr);
+    return (rval, Mat.fromPointer(ptop.value));
+  }
+
+  // TODO: optimize
+  // (int, List<Mat> topBlobs) forwardN(List<Mat> bottomBlobs, {List<Mat>? topBlobs, int? n2, Option? opt, bool inplace = false}) {
+  //   opt ??= Option.create();
+  //   if (inplace) {
+  //     final pbottom = calloc<cg.ncnn_mat_t>(n2);
+  //     for (var i = 0; i < n2; i++) {
+  //       pbottom[i] = bottomBlobs[i].ptr;
+  //     }
+  //     final f = ptr.ref.forward_n.asFunction<cg.Dartncnn_layer_forward_nFunction>();
+  //     final rval = f(ptr, pbottom, n2, topBlobs.map())
+  //   }
+  //   final ptop = calloc<cg.ncnn_mat_t>(n2);
+  //   final pbot = calloc<cg.ncnn_mat_t>(bottomBlobs.length);
+  //   for (int i = 0; i < bottomBlobs.length; i++) {
+  //     pbot[i] = bottomBlobs[i].ptr;
+  //   }
+  //   final f = ptr.ref.forward_n.asFunction<cg.Dartncnn_layer_forward_nFunction>();
+  //   final ret = f(ptr, pbot, bottomBlobs.length, ptop, n2, opt.ptr);
+  //   final rval = (ret, List<Mat>.generate(n2, (i) => Mat.fromPointer(ptop[i])));
+  //   return rval; // TODO free pointer?
+  // }
 }
 
 enum LayerType {

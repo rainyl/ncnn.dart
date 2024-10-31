@@ -3426,35 +3426,150 @@ final class _iobuf extends ffi.Struct {
   external ffi.Pointer<ffi.Void> _Placeholder;
 }
 
+typedef ncnn_allocator_fast_free
+    = ffi.Pointer<ffi.NativeFunction<ncnn_allocator_fast_freeFunction>>;
+typedef ncnn_allocator_fast_freeFunction = ffi.Void Function(
+    ncnn_allocator_t allocator, ffi.Pointer<ffi.Void> ptr);
+typedef Dartncnn_allocator_fast_freeFunction = void Function(
+    ncnn_allocator_t allocator, ffi.Pointer<ffi.Void> ptr);
+
+/// Function pointers
+typedef ncnn_allocator_fast_malloc
+    = ffi.Pointer<ffi.NativeFunction<ncnn_allocator_fast_mallocFunction>>;
+typedef ncnn_allocator_fast_mallocFunction = ffi.Pointer<ffi.Void> Function(
+    ncnn_allocator_t allocator, ffi.Size size);
+typedef Dartncnn_allocator_fast_mallocFunction = ffi.Pointer<ffi.Void> Function(
+    ncnn_allocator_t allocator, int size);
+
 /// allocator api
 typedef ncnn_allocator_t = ffi.Pointer<__ncnn_allocator_t>;
 
 /// blob api
 typedef ncnn_blob_t = ffi.Pointer<__ncnn_blob_t>;
+typedef ncnn_datareader_read
+    = ffi.Pointer<ffi.NativeFunction<ncnn_datareader_readFunction>>;
+typedef ncnn_datareader_readFunction = ffi.Size Function(
+    ncnn_datareader_t dr, ffi.Pointer<ffi.Void> buf, ffi.Size size);
+typedef Dartncnn_datareader_readFunction = int Function(
+    ncnn_datareader_t dr, ffi.Pointer<ffi.Void> buf, int size);
+typedef ncnn_datareader_scan
+    = ffi.Pointer<ffi.NativeFunction<ncnn_datareader_scanFunction>>;
+typedef ncnn_datareader_scanFunction = ffi.Int Function(ncnn_datareader_t dr,
+    ffi.Pointer<ffi.Char> format, ffi.Pointer<ffi.Void> p);
+typedef Dartncnn_datareader_scanFunction = int Function(ncnn_datareader_t dr,
+    ffi.Pointer<ffi.Char> format, ffi.Pointer<ffi.Void> p);
 
 /// datareader api
 typedef ncnn_datareader_t = ffi.Pointer<__ncnn_datareader_t>;
 
 /// extractor api
 typedef ncnn_extractor_t = ffi.Pointer<__ncnn_extractor_t>;
+typedef ncnn_layer_create_pipeline
+    = ffi.Pointer<ffi.NativeFunction<ncnn_layer_create_pipelineFunction>>;
+typedef ncnn_layer_create_pipelineFunction = ffi.Int Function(
+    ncnn_layer_t layer, ncnn_option_t opt);
+typedef Dartncnn_layer_create_pipelineFunction = int Function(
+    ncnn_layer_t layer, ncnn_option_t opt);
 
 /// layer factory function
 typedef ncnn_layer_creator_t
     = ffi.Pointer<ffi.NativeFunction<ncnn_layer_creator_tFunction>>;
 typedef ncnn_layer_creator_tFunction = ncnn_layer_t Function(
     ffi.Pointer<ffi.Void> userdata);
+typedef ncnn_layer_destroy_pipeline
+    = ffi.Pointer<ffi.NativeFunction<ncnn_layer_destroy_pipelineFunction>>;
+typedef ncnn_layer_destroy_pipelineFunction = ffi.Int Function(
+    ncnn_layer_t layer, ncnn_option_t opt);
+typedef Dartncnn_layer_destroy_pipelineFunction = int Function(
+    ncnn_layer_t layer, ncnn_option_t opt);
 typedef ncnn_layer_destroyer_t
     = ffi.Pointer<ffi.NativeFunction<ncnn_layer_destroyer_tFunction>>;
 typedef ncnn_layer_destroyer_tFunction = ffi.Void Function(
     ncnn_layer_t layer, ffi.Pointer<ffi.Void> userdata);
 typedef Dartncnn_layer_destroyer_tFunction = void Function(
     ncnn_layer_t layer, ffi.Pointer<ffi.Void> userdata);
+typedef ncnn_layer_forward_1
+    = ffi.Pointer<ffi.NativeFunction<ncnn_layer_forward_1Function>>;
+typedef ncnn_layer_forward_1Function = ffi.Int Function(
+    ncnn_layer_t layer,
+    ncnn_mat_t bottom_blob,
+    ffi.Pointer<ncnn_mat_t> top_blob,
+    ncnn_option_t opt);
+typedef Dartncnn_layer_forward_1Function = int Function(
+    ncnn_layer_t layer,
+    ncnn_mat_t bottom_blob,
+    ffi.Pointer<ncnn_mat_t> top_blob,
+    ncnn_option_t opt);
+typedef ncnn_layer_forward_inplace_1
+    = ffi.Pointer<ffi.NativeFunction<ncnn_layer_forward_inplace_1Function>>;
+typedef ncnn_layer_forward_inplace_1Function = ffi.Int Function(
+    ncnn_layer_t layer, ncnn_mat_t bottom_top_blob, ncnn_option_t opt);
+typedef Dartncnn_layer_forward_inplace_1Function = int Function(
+    ncnn_layer_t layer, ncnn_mat_t bottom_top_blob, ncnn_option_t opt);
+typedef ncnn_layer_forward_inplace_n
+    = ffi.Pointer<ffi.NativeFunction<ncnn_layer_forward_inplace_nFunction>>;
+typedef ncnn_layer_forward_inplace_nFunction = ffi.Int Function(
+    ncnn_layer_t layer,
+    ffi.Pointer<ncnn_mat_t> bottom_top_blobs,
+    ffi.Int n,
+    ncnn_option_t opt);
+typedef Dartncnn_layer_forward_inplace_nFunction = int Function(
+    ncnn_layer_t layer,
+    ffi.Pointer<ncnn_mat_t> bottom_top_blobs,
+    int n,
+    ncnn_option_t opt);
+typedef ncnn_layer_forward_n
+    = ffi.Pointer<ffi.NativeFunction<ncnn_layer_forward_nFunction>>;
+typedef ncnn_layer_forward_nFunction = ffi.Int Function(
+    ncnn_layer_t layer,
+    ffi.Pointer<ncnn_mat_t> bottom_blobs,
+    ffi.Int n,
+    ffi.Pointer<ncnn_mat_t> top_blobs,
+    ffi.Int n2,
+    ncnn_option_t opt);
+typedef Dartncnn_layer_forward_nFunction = int Function(
+    ncnn_layer_t layer,
+    ffi.Pointer<ncnn_mat_t> bottom_blobs,
+    int n,
+    ffi.Pointer<ncnn_mat_t> top_blobs,
+    int n2,
+    ncnn_option_t opt);
+typedef ncnn_layer_load_model
+    = ffi.Pointer<ffi.NativeFunction<ncnn_layer_load_modelFunction>>;
+typedef ncnn_layer_load_modelFunction = ffi.Int Function(
+    ncnn_layer_t layer, ncnn_modelbin_t mb);
+typedef Dartncnn_layer_load_modelFunction = int Function(
+    ncnn_layer_t layer, ncnn_modelbin_t mb);
+typedef ncnn_layer_load_param
+    = ffi.Pointer<ffi.NativeFunction<ncnn_layer_load_paramFunction>>;
+typedef ncnn_layer_load_paramFunction = ffi.Int Function(
+    ncnn_layer_t layer, ncnn_paramdict_t pd);
+typedef Dartncnn_layer_load_paramFunction = int Function(
+    ncnn_layer_t layer, ncnn_paramdict_t pd);
 
 /// layer api
 typedef ncnn_layer_t = ffi.Pointer<__ncnn_layer_t>;
 
 /// mat api
 typedef ncnn_mat_t = ffi.Pointer<__ncnn_mat_t>;
+typedef ncnn_modelbin_load_1d
+    = ffi.Pointer<ffi.NativeFunction<ncnn_modelbin_load_1dFunction>>;
+typedef ncnn_modelbin_load_1dFunction = ncnn_mat_t Function(
+    ncnn_modelbin_t mb, ffi.Int w, ffi.Int type);
+typedef Dartncnn_modelbin_load_1dFunction = ncnn_mat_t Function(
+    ncnn_modelbin_t mb, int w, int type);
+typedef ncnn_modelbin_load_2d
+    = ffi.Pointer<ffi.NativeFunction<ncnn_modelbin_load_2dFunction>>;
+typedef ncnn_modelbin_load_2dFunction = ncnn_mat_t Function(
+    ncnn_modelbin_t mb, ffi.Int w, ffi.Int h, ffi.Int type);
+typedef Dartncnn_modelbin_load_2dFunction = ncnn_mat_t Function(
+    ncnn_modelbin_t mb, int w, int h, int type);
+typedef ncnn_modelbin_load_3d
+    = ffi.Pointer<ffi.NativeFunction<ncnn_modelbin_load_3dFunction>>;
+typedef ncnn_modelbin_load_3dFunction = ncnn_mat_t Function(
+    ncnn_modelbin_t mb, ffi.Int w, ffi.Int h, ffi.Int c, ffi.Int type);
+typedef Dartncnn_modelbin_load_3dFunction = ncnn_mat_t Function(
+    ncnn_modelbin_t mb, int w, int h, int c, int type);
 
 /// modelbin api
 typedef ncnn_modelbin_t = ffi.Pointer<__ncnn_modelbin_t>;

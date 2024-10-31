@@ -366,7 +366,67 @@ files:
         name: ncnn_option_t
       c:c_api.h@T@ncnn_paramdict_t:
         name: ncnn_paramdict_t
+      c:c_api_types.h@T@ncnn_allocator_fast_free:
+        name: ncnn_allocator_fast_free
+      c:c_api_types.h@T@ncnn_allocator_fast_malloc:
+        name: ncnn_allocator_fast_malloc
+      c:c_api_types.h@T@ncnn_datareader_read:
+        name: ncnn_datareader_read
+      c:c_api_types.h@T@ncnn_datareader_scan:
+        name: ncnn_datareader_scan
+      c:c_api_types.h@T@ncnn_layer_create_pipeline:
+        name: ncnn_layer_create_pipeline
+      c:c_api_types.h@T@ncnn_layer_destroy_pipeline:
+        name: ncnn_layer_destroy_pipeline
+      c:c_api_types.h@T@ncnn_layer_forward_1:
+        name: ncnn_layer_forward_1
+      c:c_api_types.h@T@ncnn_layer_forward_inplace_1:
+        name: ncnn_layer_forward_inplace_1
+      c:c_api_types.h@T@ncnn_layer_forward_inplace_n:
+        name: ncnn_layer_forward_inplace_n
+      c:c_api_types.h@T@ncnn_layer_forward_n:
+        name: ncnn_layer_forward_n
+      c:c_api_types.h@T@ncnn_layer_load_model:
+        name: ncnn_layer_load_model
+      c:c_api_types.h@T@ncnn_layer_load_param:
+        name: ncnn_layer_load_param
+      c:c_api_types.h@T@ncnn_modelbin_load_1d:
+        name: ncnn_modelbin_load_1d
+      c:c_api_types.h@T@ncnn_modelbin_load_2d:
+        name: ncnn_modelbin_load_2d
+      c:c_api_types.h@T@ncnn_modelbin_load_3d:
+        name: ncnn_modelbin_load_3d
+      ncnn_allocator_fast_freeFunction:
+        name: ncnn_allocator_fast_freeFunction
+      ncnn_allocator_fast_mallocFunction:
+        name: ncnn_allocator_fast_mallocFunction
+      ncnn_datareader_readFunction:
+        name: ncnn_datareader_readFunction
+      ncnn_datareader_scanFunction:
+        name: ncnn_datareader_scanFunction
+      ncnn_layer_create_pipelineFunction:
+        name: ncnn_layer_create_pipelineFunction
       ncnn_layer_creator_tFunction:
         name: ncnn_layer_creator_tFunction
+      ncnn_layer_destroy_pipelineFunction:
+        name: ncnn_layer_destroy_pipelineFunction
       ncnn_layer_destroyer_tFunction:
         name: ncnn_layer_destroyer_tFunction
+      ncnn_layer_forward_1Function:
+        name: ncnn_layer_forward_1Function
+      ncnn_layer_forward_inplace_1Function:
+        name: ncnn_layer_forward_inplace_1Function
+      ncnn_layer_forward_inplace_nFunction:
+        name: ncnn_layer_forward_inplace_nFunction
+      ncnn_layer_forward_nFunction:
+        name: ncnn_layer_forward_nFunction
+      ncnn_layer_load_modelFunction:
+        name: ncnn_layer_load_modelFunction
+      ncnn_layer_load_paramFunction:
+        name: ncnn_layer_load_paramFunction
+      ncnn_modelbin_load_1dFunction:
+        name: ncnn_modelbin_load_1dFunction
+      ncnn_modelbin_load_2dFunction:
+        name: ncnn_modelbin_load_2dFunction
+      ncnn_modelbin_load_3dFunction:
+        name: ncnn_modelbin_load_3dFunction

@@ -17,8 +17,10 @@ include-unused-typedefs: true
 headers:
   entry-points:
     - 'src/ncnn/c_api.h'
+    - 'src/ncnn/c_api_types.h'
   include-directives:
     - 'src/ncnn/c_api.h'
+    - 'src/ncnn/c_api_types.h'
 # structs:
 #   exclude:
 #     - "_.*"

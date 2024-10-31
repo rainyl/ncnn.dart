@@ -65,6 +65,9 @@ void main() {
   });
 
   group('Mat operations', () {
-    final a = ncnn.Mat.create1D();
+    final a = ncnn.Mat.create1D(2);
+    final b = ncnn.Mat.create1D(2);
+    a.fillFloat(2.0);
+    b.fillFloat(2.0);
   });
 }

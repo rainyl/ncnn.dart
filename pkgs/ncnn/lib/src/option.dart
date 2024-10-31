@@ -1,9 +1,18 @@
-import 'base.dart';
 import 'allocator.dart';
+import 'base.dart';
 import 'g/ncnn.g.dart' as cg;
 
 class Option extends NativeObject<cg.ncnn_option_t> {
-  Option.fromPointer(super.ptr);
+  Option.fromPointer(super.ptr) {
+    finalizer.attach(this, ptr.cast(), detach: this);
+  }
+  static final finalizer = ncnnFinalizer<cg.ncnn_option_t>(cncnn.addresses.ncnn_option_destroy);
+
+  @override
+  void dispose() {
+    finalizer.detach(this);
+    cncnn.ncnn_option_destroy(ptr);
+  }
 
   factory Option.create() {
     final p = cncnn.ncnn_option_create();
@@ -22,6 +31,4 @@ class Option extends NativeObject<cg.ncnn_option_t> {
   set blobAllocator(Allocator allocator) => cncnn.ncnn_option_set_blob_allocator(ptr, allocator.ptr);
   set workspaceAllocator(Allocator allocator) =>
       cncnn.ncnn_option_set_workspace_allocator(ptr, allocator.ptr);
-
-  static final finalizer = ncnnFinalizer<cg.ncnn_option_t>(cncnn.addresses.ncnn_option_destroy);
 }

@@ -12,6 +12,12 @@ class Datareader extends NativeObject<cg.ncnn_datareader_t> {
     finalizer.attach(this, ptr.cast(), detach: this);
   }
 
+  @override
+  void dispose() {
+    finalizer.detach(this);
+    cncnn.ncnn_datareader_destroy(ptr);
+  }
+
   factory Datareader.create() {
     final p = cncnn.ncnn_datareader_create();
     return Datareader.fromPointer(p);

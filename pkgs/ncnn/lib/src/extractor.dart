@@ -9,7 +9,15 @@ import 'net.dart';
 import 'option.dart';
 
 class Extractor extends NativeObject<cg.ncnn_extractor_t> {
-  Extractor.fromPointer(super.ptr);
+  Extractor.fromPointer(super.ptr){
+    finalizer.attach(this, ptr.cast(), detach: this);
+  }
+
+  @override
+  void dispose() {
+    finalizer.detach(this);
+    cncnn.ncnn_extractor_destroy(ptr);
+  }
 
   factory Extractor.create(Net net) {
     final p = cncnn.ncnn_extractor_create(net.ptr);

@@ -3,13 +3,21 @@ import 'dart:typed_data';
 
 import 'package:ffi/ffi.dart';
 
-import 'datareader.dart';
-import 'option.dart';
 import 'base.dart';
+import 'datareader.dart';
 import 'g/ncnn.g.dart' as cg;
+import 'option.dart';
 
 class Net extends NativeObject<cg.ncnn_net_t> {
-  Net.fromPointer(super.ptr);
+  Net.fromPointer(super.ptr) {
+    finalizer.attach(this, ptr.cast(), detach: this);
+  }
+
+  @override
+  void dispose() {
+    finalizer.detach(this);
+    cncnn.ncnn_net_destroy(ptr);
+  }
 
   factory Net.create() {
     final p = cncnn.ncnn_net_create();

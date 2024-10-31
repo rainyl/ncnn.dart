@@ -5,9 +5,9 @@ import 'dart:ffi' as ffi;
 import 'package:ffi/ffi.dart';
 
 import 'base.dart';
+import 'g/ncnn.g.dart' as cg;
 import 'mat.dart';
 import 'option.dart';
-import 'g/ncnn.g.dart' as cg;
 
 const int NCNN_BORDER_CONSTANT = 0;
 const int NCNN_BORDER_REPLICATE = 1;

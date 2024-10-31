@@ -9,6 +9,10 @@ abstract class NativeObject<T extends ffi.Pointer> implements ffi.Finalizable {
   NativeObject(this.ptr);
 
   T ptr;
+
+  bool get isNull => ptr.address == 0;
+
+  void dispose();
 }
 
 // finalizers
@@ -17,6 +21,10 @@ typedef NativeFinalizerFunctionT<T extends ffi.NativeType>
 
 ffi.NativeFinalizer ncnnFinalizer<T extends ffi.NativeType>(NativeFinalizerFunctionT<T> func) =>
     ffi.NativeFinalizer(func.cast<ffi.NativeFinalizerFunction>());
+
+extension BoolIntExtension on bool {
+  int toInt() => this ? 1 : 0;
+}
 
 // load native library
 ffi.DynamicLibrary loadNativeLibrary(String libName) {

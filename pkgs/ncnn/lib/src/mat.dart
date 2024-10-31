@@ -13,7 +13,7 @@ const int NCNN_MAT_PIXEL_BGR = 2;
 const int NCNN_MAT_PIXEL_GRAY = 3;
 const int NCNN_MAT_PIXEL_RGBA = 4;
 const int NCNN_MAT_PIXEL_BGRA = 5;
-int NCNN_MAT_PIXEL_X2Y(X, Y) => (X | (Y << 16));
+int NCNN_MAT_PIXEL_X2Y(int X, int Y) => X | (Y << 16);
 
 class Mat extends NativeObject<cg.ncnn_mat_t> {
   Mat.fromPointer(super.ptr) {

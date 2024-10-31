@@ -1,9 +1,17 @@
 import 'base.dart';
-import 'mat.dart';
 import 'g/ncnn.g.dart' as cg;
+import 'mat.dart';
 
 class ParamDict extends NativeObject<cg.ncnn_paramdict_t> {
-  ParamDict.fromPointer(super.ptr);
+  ParamDict.fromPointer(super.ptr) {
+    finalizer.attach(this, ptr.cast(), detach: this);
+  }
+
+  @override
+  void dispose() {
+    finalizer.detach(this);
+    cncnn.ncnn_paramdict_destroy(ptr);
+  }
 
   factory ParamDict.create() {
     final p = cncnn.ncnn_paramdict_create();
